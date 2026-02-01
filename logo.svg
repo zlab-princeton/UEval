@@ -1,0 +1,56 @@
+<svg width="500" height="175" viewBox="0 0 500 175" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Frame gradient -->
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6"/>
+      <stop offset="50%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#38bdf8"/>
+    </linearGradient>
+
+    <!-- Mountain gradient -->
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="50%" style="stop-color:#c026d3"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+
+    <!-- Text gradient for "Eval" -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main frame -->
+  <rect x="20" y="20" width="130" height="120" rx="12" ry="12"
+        fill="none" stroke="url(#frameGrad)" stroke-width="5"/>
+
+  <!-- Inner content area (white) -->
+  <rect x="28" y="28" width="114" height="104" rx="8" ry="8" fill="white"/>
+
+  <!-- Text lines (top area) -->
+  <rect x="38" y="38" width="50" height="5" rx="2.5" fill="#fca5a5"/>
+  <rect x="38" y="47" width="40" height="5" rx="2.5" fill="#fca5a5"/>
+  <rect x="38" y="56" width="45" height="5" rx="2.5" fill="#fca5a5"/>
+  <rect x="38" y="65" width="35" height="5" rx="2.5" fill="#fca5a5"/>
+
+  <!-- Mountain/landscape -->
+  <polygon points="32,128 65,88 88,105 128,68 128,128" fill="url(#mountainGrad)"/>
+
+  <!-- Sun/circle -->
+  <circle cx="112" cy="52" r="7" fill="#fbbf24"/>
+
+  <!-- Sparkles -->
+  <path d="M98 42 L100 47 L105 49 L100 51 L98 56 L96 51 L91 49 L96 47 Z" fill="#38bdf8"/>
+  <path d="M72 78 L73 81 L76 82 L73 83 L72 86 L71 83 L68 82 L71 81 Z" fill="#818cf8"/>
+
+  <!-- Checkmark circle -->
+  <circle cx="45" cy="128" r="20" fill="#22c55e"/>
+  <path d="M36 128 L42 134 L55 120" stroke="white" stroke-width="4" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- UEval text - modern, lighter weight -->
+  <text x="170" y="118" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="82" font-weight="600" letter-spacing="-2">
+    <tspan fill="#4f46e5">U</tspan><tspan fill="url(#textGrad)">Eval</tspan>
+  </text>
+</svg>
