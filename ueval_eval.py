@@ -2,7 +2,7 @@
 """
 Data preparation:
     The evaluation dataset with rubrics is loaded automatically from HuggingFace:
-    https://huggingface.co/datasets/primerL/UEval-all/
+    https://huggingface.co/datasets/zlab-princeton/UEval
 
     Your model output JSON should follow this format:
     [
@@ -706,7 +706,7 @@ def parse_args() -> argparse.Namespace:
                         help="Where to save evaluation results.")
     parser.add_argument(
         "--hf_dataset",
-        default="primerL/UEval-all",
+        default="zlab-princeton/UEval",
         help="HuggingFace dataset ID (default: primerL/UEval-all).",
     )
     parser.add_argument(
