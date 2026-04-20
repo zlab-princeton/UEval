@@ -534,7 +534,8 @@ def evaluate_item(
                     print(f"  [Cache] Created text cache: {text_cache.name}")
 
             for rubric in item.get("text_rubrics", []):
-                criterion = rubric.get("criterion", "")
+                # Rubric is now a simple string
+                criterion = rubric if isinstance(rubric, str) else rubric.get("criterion", "")
 
                 # Build rubric prompt
                 rubric_prompt = TEXT_RUBRIC_TEMPLATE.replace(
@@ -556,7 +557,7 @@ def evaluate_item(
 
                 text_results.append(
                     {
-                        "criterion": rubric.get("criterion", ""),
+                        "criterion": criterion,
                         "criteria_met": criteria_met,
                         "explanation": parsed.get("explanation", ""),
                         "raw_response": str(parsed),
@@ -594,7 +595,8 @@ def evaluate_item(
                     print(f"  [Cache] Created cache: {cache.name}")
 
             for rubric in item.get("image_rubrics", []):
-                criterion = rubric.get("criterion", "")
+                # Rubric is now a simple string
+                criterion = rubric if isinstance(rubric, str) else rubric.get("criterion", "")
 
                 # Build rubric prompt
                 rubric_prompt = IMAGE_RUBRIC_TEMPLATE.replace(
@@ -616,11 +618,9 @@ def evaluate_item(
 
                 image_results.append(
                     {
-                        "criterion": rubric.get("criterion", ""),
+                        "criterion": criterion,
                         "criteria_met": criteria_met,
                         "explanation": parsed.get("explanation", ""),
-                        "rubric_tags": rubric.get("tags", []),
-                        "type": rubric.get("type", "image"),
                         "raw_response": str(parsed),
                     }
                 )
